@@ -15,6 +15,15 @@ class Teams(models.Model):
     def __str__(self):
         return self.first_name
 
+class Aboutus(models.Model):
+    heading = models.CharField(max_length=255,blank=True)
+    description = models.TextField()
+    photo = models.ImageField(upload_to="media/aboutus/%Y/%m")
+
+
+    def __str__(self):
+        return self.heading
+
 class Slider(models.Model):
     headline = models.CharField(max_length=255)
     subtitle = models.CharField(max_length=255)

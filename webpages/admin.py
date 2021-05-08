@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Slider , Teams
+from .models import Slider , Teams, Aboutus
 from django.utils.html import format_html
 # Register your models here.
 
@@ -15,5 +15,10 @@ class TeamAdmin(admin.ModelAdmin):
 class Slideradmin(admin.ModelAdmin):
     list_display = ('headline','subtitle','button_text')
 
+class Aboutadmin(admin.ModelAdmin):
+    list_display = ('id','heading')
+    list_display_links = ('id',)
+
 admin.site.register(Slider,Slideradmin)
 admin.site.register(Teams,TeamAdmin)
+admin.site.register(Aboutus,Aboutadmin)
